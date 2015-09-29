@@ -6,8 +6,16 @@ angular.module('messages',['ui.router'])
 .config(['$stateProvider',function config($stateProvider){
     $stateProvider.state('messages', {
       url: '/messages',
-      template: '<h1>Hello world</h1>'
+      views: {
+        "main": {
+          controller: 'MessagesCtrl',
+          template: '<h1>Hello messages</h1><a ui-sref="">home </a>' //'constructor/objectonto'//
+        }
+      }
+
     })
 
   }])
-.controller()
+.controller('MessagesCtrl',function(){
+
+  })
