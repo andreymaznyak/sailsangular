@@ -9,7 +9,7 @@ angular.module('messages',['ui.router'])
       views: {
         "main": {
           controller: 'MessagesCtrl',
-          template: '<h1>Hello messages</h1><a ui-sref="">home </a>' //'constructor/objectonto'//
+          template: '<h1>Hello messages</h1><a ui-sref="rootstate">home </a>' //'constructor/objectonto'//
         }
       }
 
