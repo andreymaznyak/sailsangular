@@ -1,7 +1,7 @@
 /**
  * Created by Андрей on 29.09.2015.
  */
-angular.module('messages',['ui.router','sails.io'])
+angular.module('messages',['ui.router','ngSails'])
 
 .config(['$stateProvider',function config($stateProvider){
     $stateProvider.state('messages', {
@@ -15,13 +15,15 @@ angular.module('messages',['ui.router','sails.io'])
     })
 
   }])
-.controller('MessagesCtrl',['$sailsSocket',
-    function($sailsSocket){
-    console.log('MessagesCtrl');
-    $sailsSocket.get( 'localhost:1337/messages' ).then( success, error );
-
-    function success(date){
-      console.log(date);
-    }
+.controller('MessagesCtrl',['$scope','$sails',
+    function($scope, $sails){
+      console.log('MessagesCtrl');
+      console.log($sails);
+      $sails.get('/User')
+        .then(function(resp){
+          $scope.users = resp;
+        }, function(resp){
+          console.error('user is not load');
+        });
 
   }])
