@@ -34,8 +34,10 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  '/messages': {
+    view: 'homepage'
   }
-
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
