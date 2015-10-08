@@ -1,0 +1,16 @@
+<h1> my messages</h1>
+<ul>
+  <li ng-repeat="message in messages">
+    {{message.createdAt}} {{message.text}}
+    <button ng-click="destroyMessage(message)"> delete </button>
+  </li>
+</ul>
+
+<form role="form" ng-submit="createMessage(newMessage)">
+  <div class="form-group">
+    <label for="messageTitle">Your Message</label>
+    <input type="text" ng-model="newMessage.text" class="form-control" id="messageTitle">
+    <button type="submit" class="btn btn-primary" ng-disabled="!newMessage.text">Send</button>
+  </div>
+
+</form>

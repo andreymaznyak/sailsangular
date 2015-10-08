@@ -1,7 +1,18 @@
 <!-- Default home page -->
 <div class="default-page">
-    <div ui-view='main'>
+    <div ui-view="navigation">
+      <ul>
+        <li>
+          <a ui-sref='messages'>messages</a>
+        </li>
+        <li>
+          <a ui-sref='root'> home</a>
+        </li>
+      </ul>
+    </div>
+    <div ui-view='content'>
       <i>Some content will load here!</i>
     </div>
-    <a ui-sref='messages'>messages</a>
+
+
 </div>

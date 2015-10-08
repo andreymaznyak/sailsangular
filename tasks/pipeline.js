@@ -25,8 +25,9 @@ var jsFilesToInject = [
 
   // Load sails.io before everything else
   '/bower_components/sails.io.js/dist/sails.io.js',
+  'bower_components/lodash/lodash.js',
   'bower_components/angular/angular.js',
-  'bower_components/angular-sails/dist/angular-sails.js',
+  'bower_components/angularSails/dist/ngsails.io.js',
   'bower_components/angular-ui-router/release/angular-ui-router.js',
 
   // All of the rest of your client-side js files

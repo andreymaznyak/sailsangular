@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-	
+	'getView': function(req,res){
+    res.view('messages');
+  }
 };
 
