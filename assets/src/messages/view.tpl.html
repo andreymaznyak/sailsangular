@@ -1,11 +1,4 @@
 <h1> my messages</h1>
-<ul>
-  <li ng-repeat="message in messages">
-    {{message.createdAt}} {{message.text}}
-    <button ng-click="destroyMessage(message)"> delete </button>
-  </li>
-</ul>
-
 <form role="form" ng-submit="createMessage(newMessage)">
   <div class="form-group">
     <label for="messageTitle">Your Message</label>
@@ -14,3 +7,14 @@
   </div>
 
 </form>
+
+<pagination total-items="(messages.length - 1)*itemsPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></pagination>
+<pre>Page: {{currentPage}} / {{messages.length - 1}}</pre>
+<ul>
+  <li ng-repeat="message in messages[currentPage]">
+    {{$index + 1}}
+    {{message.createdAt}} {{message.text}}
+    <button class="btn btn-primary" ng-click="destroyMessage(message)"> delete </button>
+  </li>
+</ul>
+

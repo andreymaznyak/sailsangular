@@ -8,6 +8,14 @@
 module.exports = {
 	'getView': function(req,res){
     res.view('messages');
+  },
+  'count': function(req,res){
+    Messages.count(function(err, result){
+      if(err) res.end(err)
+      else
+      res.json({count:result});
+
+    });
   }
 };
 

@@ -6,7 +6,8 @@ var app = angular.module("MyApp", [
   'templates-app',
   'ui.router',
   'models',
-  'messages'
+  'messages',
+  'ui.bootstrap'
 
 
 ]);
