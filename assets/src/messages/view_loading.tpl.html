@@ -10,11 +10,17 @@
 
 <pagination total-items="(messages.length - 1)*itemsPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></pagination>
 <pre>Page: {{currentPage}} / {{messages.length - 1}}</pre>
-<ul>
-  <li ng-repeat="message in messages[currentPage]">
-    {{$index + 1}}
-    {{message.createdAt}} {{message.text}}
-    <button class="btn btn-primary" ng-click="destroyMessage(message)"> delete </button>
-  </li>
-</ul>
+
+<div id="scrollArea" scroll>
+  <div ng-repeat="(pageIndex,messagesPage) in messages">
+    <table>
+      <tr ng-repeat="message in messagesPage">
+        <td>{{($index + 1)+(pageIndex * itemsPerPage)}}    </td>
+        <td>{{message.createdAt}}        </td>
+        <td>{{message.text}}       </td>
+        <td><button class="btn btn-primary" ng-click="destroyMessage(message)"> delete </button></td>
+      </tr>
+    </table>
+  </dage
+</div>
 

@@ -1,0 +1,30 @@
+<h1> my messages</h1>
+<form role="form" ng-submit="createMessage(newMessage)">
+  <div class="form-group">
+    <label for="messageTitle">Your Message</label>
+    <input type="text" ng-model="newMessage.text" class="form-control" id="messageTitle">
+    <button type="submit" class="btn btn-primary" ng-disabled="!newMessage.text">Send</button>
+  </div>
+
+</form>
+
+<pagination total-items="(messages.length)*itemsPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage" ng-change="pageChanged()"></pagination>
+<pre>Page: {{currentPage}} / {{messages.length - 1}}</pre>
+
+<div>
+  <table class="table table-striped">
+    <tr>
+      <td>Номер</td>
+      <td>Дата создания</td>
+      <td>Текст сообщения</td>
+      <td>Дейсвия</td>
+    </tr>
+    <tr ng-repeat="message in messages[currentPage - 1]">
+      <td>{{$index + 1}}</td>
+      <td>{{message.createdAt}}</td>
+      <td>{{message.text}}</td>
+      <td><button class="btn btn-primary" ng-click="destroyMessage(message)"> delete </button></td>
+    </tr>
+  </table>
+</div>
+

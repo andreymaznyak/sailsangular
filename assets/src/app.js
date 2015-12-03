@@ -7,9 +7,8 @@ var app = angular.module("MyApp", [
   'ui.router',
   'models',
   'messages',
-  'ui.bootstrap'
-
-
+  'ui.bootstrap',
+  'directives'
 ]);
 app.config( function myAppConfig( $stateProvider, $urlRouterProvider, $locationProvider ){
   $stateProvider.state('root',{
